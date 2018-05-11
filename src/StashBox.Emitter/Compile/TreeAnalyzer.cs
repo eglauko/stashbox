@@ -1,4 +1,4 @@
-﻿using Stashbox.Entity;
+﻿//using Stashbox.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +15,8 @@ namespace Stashbox.BuildUp.Expressions.Compile
 
         public Expression[] DefinedVariables { get; private set; } = new Expression[0];
 
-        public KeyValue<LambdaExpression, Expression[]>[] NestedLambdas { get; private set; } 
-            = new KeyValue<LambdaExpression, Expression[]>[0];
+        public KeyValuePair<LambdaExpression, Expression[]>[] NestedLambdas { get; private set; } 
+            = new KeyValuePair<LambdaExpression, Expression[]>[0];
 
         public Type[] StoredObjectTypes { get; private set; } = new Type[0];
 
@@ -39,7 +39,7 @@ namespace Stashbox.BuildUp.Expressions.Compile
                     if (!analyzer.Analyze(lambda.Body, lambda.Parameters.CastToArray()))
                         return false;
 
-                    this.AddNestedLambda(new KeyValue<LambdaExpression, Expression[]>(lambda, analyzer.DefinedVariables));
+                    this.AddNestedLambda(new KeyValuePair<LambdaExpression, Expression[]>(lambda, analyzer.DefinedVariables));
 
                     var length = analyzer.StoredExpressions.Length;
                     for (var i = 0; i < length; i++)
@@ -155,7 +155,7 @@ namespace Stashbox.BuildUp.Expressions.Compile
             this.DefinedVariables = this.DefinedVariables.AddElement(expression);
         }
 
-        private void AddNestedLambda(KeyValue<LambdaExpression, Expression[]> element)
+        private void AddNestedLambda(KeyValuePair<LambdaExpression, Expression[]> element)
         {
             if (this.NestedLambdas.ContainsElement(element)) return;
             this.NestedLambdas = this.NestedLambdas.AddElement(element);
