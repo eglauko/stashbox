@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Stashbox.BuildUp.Expressions.Compile
 {
-    internal class DelegateTarget
+    public class DelegateTarget
     {
         public FieldInfo[] Fields { get; }
 

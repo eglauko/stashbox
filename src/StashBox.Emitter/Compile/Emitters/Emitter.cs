@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 
 namespace Stashbox.BuildUp.Expressions.Compile.Emitters
 {
-    internal static partial class Emitter
+    public static partial class Emitter
     {
         public static bool TryEmit(this Expression expression, ILGenerator generator, CompilerContext context, params ParameterExpression[] parameters)
         {

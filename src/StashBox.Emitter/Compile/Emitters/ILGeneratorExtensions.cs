@@ -6,7 +6,7 @@ using Stashbox.BuildUp.Expressions.Compile;
 
 namespace System.Reflection.Emit
 {
-    internal static class ILGeneratorExtensions
+    public static class ILGeneratorExtensions
     {
 
         public static LocalBuilder PrepareCapturedArgumentsHolderVariable(this ILGenerator generator, Type capturedArgumentType)

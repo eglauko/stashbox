@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Stashbox.BuildUp.Expressions.Compile
 {
-    internal class CompilerContext
+    public class CompilerContext
     {
         private readonly AtomicBool hasCapturedVariablesArgumentConstructed;
 

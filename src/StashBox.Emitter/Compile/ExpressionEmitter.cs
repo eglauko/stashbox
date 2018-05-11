@@ -9,7 +9,7 @@ using System.Reflection.Emit;
 
 namespace Stashbox.BuildUp.Expressions.Compile
 {
-    internal static class ExpressionEmitter
+    public static class ExpressionEmitter
     {
         public static bool TryEmit(this LambdaExpression expression, out Delegate resultDelegate) =>
             TryEmit(expression.Body, out resultDelegate, expression.Type, expression.ReturnType,

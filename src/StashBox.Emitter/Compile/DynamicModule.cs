@@ -1,5 +1,5 @@
 ﻿#if NET45 || NET40 || IL_EMIT
-using Stashbox.Utils;
+//using Stashbox.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -98,7 +98,8 @@ namespace Stashbox.BuildUp.Expressions.Compile
 #else
             var type = typeBuilder.CreateType();
 #endif
-            Swap.SwapValue(ref TargetTypes, t => t.AddOrUpdate(length, type));
+            TargetTypes.AddOrUpdate(length, type);
+            //Swap.SwapValue(ref TargetTypes, t => t.AddOrUpdate(length, type));
             return type.MakeGenericType(types);
         }
 
@@ -147,7 +148,8 @@ namespace Stashbox.BuildUp.Expressions.Compile
 #else
             var type = typeBuilder.CreateType();
 #endif
-            Swap.SwapValue(ref CapturedArgumentTypes, t => t.AddOrUpdate(length, type));
+            CapturedArgumentTypes.AddOrUpdate(length, type);
+            //Swap.SwapValue(ref CapturedArgumentTypes, t => t.AddOrUpdate(length, type));
             return type.MakeGenericType(types);
         }
     }

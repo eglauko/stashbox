@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace Stashbox.BuildUp.Expressions.Compile
 {
-    internal class LambdaContext
+    public class LambdaContext
     {
         public Expression[] DefinedVariables { get; }
 
