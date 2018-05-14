@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Stashbox.BuildUp.Expressions.Compile
 {
-    internal class CapturedArgumentsHolder
+    public class CapturedArgumentsHolder
     {
         public FieldInfo[] Fields { get; }
 
